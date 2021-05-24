@@ -3,6 +3,8 @@ const express = require('express');
 const connectDB = require('./config/db');
 const auth = require('./routes/auth');
 const private = require('./routes/private');
+const posts = require('./routes/posts');
+const photos = require('./routes/photos');
 const errorHandler = require('./middleware/error');
 
 // Connect DB
@@ -14,6 +16,8 @@ app.use(express.json());
 
 app.use('/api/auth', auth);
 app.use('/api/private', private);
+app.use('/api/posts', posts);
+app.use('/api/photos', photos);
 
 // Error Handler (Should be last piece of middleware)
 app.use(errorHandler);
