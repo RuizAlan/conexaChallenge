@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './PrivateScreen.css';
 
 const PrivateScreen = ({ history }) => {
@@ -46,6 +47,8 @@ const PrivateScreen = ({ history }) => {
                 {privateData}
             </div>
             <button onClick={logoutHandler}>Logout</button>
+            <button><Link to='/posts'>Posts</Link></button>
+            <button><Link to='/photos'>Photos</Link></button>
         </>
     );
 };
